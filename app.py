@@ -9,6 +9,7 @@ st.title("Capillas")
 colecta_unitaria = load_table_to_dataframe("analisis_COLECTA_unitaria")
 cod_comuna = load_table_to_dataframe("Cod_comuna")
 colectas_por_ano = load_table_to_dataframe("colectas_por_ano")
+comunas_2017 = load_table_to_dataframe("data_apxs_2017")
 
 
 st.header("Modelos", divider = True)
@@ -31,4 +32,7 @@ st.dataframe(colectas_por_ano)
 
 st.subheader("cod_comuna")
 st.dataframe(cod_comuna)
+
+st.subheader("comunas_2017")
+st.dataframe(comunas_2017)
 

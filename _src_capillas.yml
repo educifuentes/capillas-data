@@ -29,7 +29,7 @@ sources:
     notas: no hay contenido, solo map_rm
     filename: Data APXS 2017.xlsx
     tables:
-      - name: Data APXS 2017
+      - name: data_apxs_2017
         sheet_name: Data APXS 2017
         url: https://docs.google.com/spreadsheets/d/1ls0R3RlhBHfQY23qMhJ4xdnvGE6xvrhw
         columns:
