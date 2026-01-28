@@ -2,7 +2,7 @@ import pandas as pd
 from models._dim_comunas import stg_cod_comunas
 from utilities.load_sources import load_table_to_dataframe
 
-def stg_colectas():
+def stg_colectas_unitaria():
     # Load sources
     colectas_unitaria = load_table_to_dataframe('analisis_COLECTA_unitaria')
     raw_comunas = load_table_to_dataframe('Cod_comuna')
@@ -25,7 +25,7 @@ def stg_colectas():
     return None
 
 if __name__ == "__main__":
-    df_fct = stg_colectas()
+    df_fct = stg_colectas_unitaria()
     if df_fct is not None:
         print("Successfully merged colectas with comunas")
         print(df_fct.head())
