@@ -1,7 +1,7 @@
 import streamlit as st
 
 from utilities.load_sources import load_table_to_dataframe
-from models._fct_colectas import stg_colectas_unitaria
+from models._fct_colectas_unitaria import stg_colectas_unitaria
 
 st.title("Capillas")
 
