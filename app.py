@@ -15,7 +15,7 @@ comunas_2017 = load_table_to_dataframe("data_apxs_2017")
 
 
 st.header("Finales", divider = True)
-st.markdown(" joined df - colectas unitarias + cod comunas")
+st.markdown(" joined df - colectas unitarias + cod comunas 2024 + comunas 2017")
 
 
 fct_colectas = stg_colectas_unitaria()
@@ -27,6 +27,7 @@ st.dataframe(fct_colectas_ano)
 
 st.header("Intermediate", divider = True)
 
+st.markdown("stg comunas 2017 - se hizo reshape")
 stg_comunas_2017 = stg_comunas_2017()
 st.dataframe(stg_comunas_2017)
 
