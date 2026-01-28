@@ -1,11 +1,13 @@
 import pandas as pd
 from models._dim_comunas_censo_2024 import stg_comunas_censo_2024
+from models._dim_comunas_2017 import stg_comunas_2017
 from utilities.load_sources import load_table_to_dataframe
 
 def stg_colectas_ano():
     # Load sources
     colectas_ano = load_table_to_dataframe('colectas_por_ano')
     raw_comunas = load_table_to_dataframe('Cod_comuna')
+    stg_comunas_2017_df = stg_comunas_2017()
     
     # Process comunas
     comunas_df = stg_comunas_censo_2024(raw_comunas)
@@ -20,6 +22,16 @@ def stg_colectas_ano():
             right_on='codigo_comuna', 
             how='left'
         )
+
+        df_joined = pd.merge(
+            df_joined, 
+            stg_comunas_2017_df, 
+            left_on='cod_comuna', 
+            right_on='codigo_comuna', 
+            how='left'
+        )
+
+
         return df_joined
     
     return None
