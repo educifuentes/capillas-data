@@ -1,5 +1,5 @@
 import pandas as pd
-from models._dim_comunas_censo_2024 import stg_cod_comunas
+from models._dim_comunas_censo_2024 import stg_comunas_censo_2024
 from utilities.load_sources import load_table_to_dataframe
 
 def stg_colectas_ano():
@@ -8,7 +8,7 @@ def stg_colectas_ano():
     raw_comunas = load_table_to_dataframe('Cod_comuna')
     
     # Process comunas
-    comunas_df = stg_cod_comunas(raw_comunas)
+    comunas_df = stg_comunas_censo_2024(raw_comunas)
     
     if colectas_ano is not None and comunas_df is not None:
         # Perform left join

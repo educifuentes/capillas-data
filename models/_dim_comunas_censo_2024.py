@@ -22,7 +22,7 @@ def load_dim_comunas():
     
     return df_apxs, df_cod_comuna
 
-def stg_cod_comunas(df_cod_comuna):
+def stg_comunas_censo_2024(df_cod_comuna):
     """
     Renames columns and selects subset.
     """
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     df_apxs, df_cod_comuna = load_dim_comunas()
     
     # 1. Clean cod_comuna (Rename and Select)
-    df_cod_comuna = clean_cod_comuna(df_cod_comuna)
+    df_cod_comuna = stg_comunas_censo_2024(df_cod_comuna)
     
     # 2. Transform (Left Join)
     df_dim_comunas = transform_dim_comunas(df_cod_comuna, df_apxs)
