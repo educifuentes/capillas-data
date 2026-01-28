@@ -22,7 +22,7 @@ def load_dim_comunas():
     
     return df_apxs, df_cod_comuna
 
-def clean_cod_comuna(df_cod_comuna):
+def stg_cod_comunas(df_cod_comuna):
     """
     Renames columns and selects subset.
     """

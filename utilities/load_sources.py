@@ -1,13 +1,23 @@
 import yaml
 import pandas as pd
 
+def read_yaml_config(yaml_path='_src_capillas.yml'):
+    """
+    Reads the YAML file and returns it as a dictionary.
+    """
+    try:
+        with open(yaml_path, 'r') as file:
+            return yaml.safe_load(file) or {}
+    except Exception as e:
+        print(f"Error reading YAML file {yaml_path}: {e}")
+        return {}
+
 def get_source_config(yaml_path='_src_capillas.yml'):
     """
     Reads the sources from a YAML file and returns a list of dictionaries
     for each table with name, url, and sheet_name.
     """
-    with open(yaml_path, 'r') as file:
-        config = yaml.safe_load(file)
+    config = read_yaml_config(yaml_path)
     
     table_configs = []
     for source in config.get('sources', []):
@@ -23,6 +33,14 @@ def get_source_config(yaml_path='_src_capillas.yml'):
                     'sheet_name': sheet_name
                 })
     return table_configs
+
+def get_tables_dict(yaml_path='_src_capillas.yml'):
+    """
+    Returns a dictionary of all tables defined in the YAML file,
+    indexed by table name.
+    """
+    configs = get_source_config(yaml_path)
+    return {cfg['name']: cfg for cfg in configs}
 
 def _prepare_gsheet_url(url):
     """
