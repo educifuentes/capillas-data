@@ -1,0 +1,14 @@
+- name: colectas
+  description: a nivel de colecta, en que parroquia fue y monto. hay columans a la derehca que no son.
+  filename: Analisis_COLECTA_normalizada.xlsx
+  tables:
+    - name: analisis_COLECTA_unitaria
+      sheet_name: analisis_COLECTA_unitaria
+      url: https://docs.google.com/spreadsheets/d/1EYmYGHdELppqL1oCgDCgRomvJTX2KDBN/edit?gid=1936895282#gid=1936895282
+      description: Raw customers data
+      columns:
+        - name: id
+          description: primary key
+    - name: colectas_por_ano
+      sheet_name: colectas_por_ano
+      url: https://docs.google.com/spreadsheets/d/1EYmYGHdELppqL1oCgDCgRomvJTX2KDBN/edit?gid=1228087779#gid=1228087779
