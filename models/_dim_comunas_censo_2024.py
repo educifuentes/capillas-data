@@ -17,7 +17,7 @@ def load_dim_comunas():
     Loads specific tables required for dimension comunas.
     """
     # Load specific tables
-    df_apxs = load_table_to_dataframe('Data APXS 2017')
+    df_apxs = load_table_to_dataframe('data_apxs_2017')
     df_cod_comuna = load_table_to_dataframe('Cod_comuna')
     
     return df_apxs, df_cod_comuna
