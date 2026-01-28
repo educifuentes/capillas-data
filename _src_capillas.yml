@@ -1,0 +1,37 @@
+sources:
+  - name: codigos_comunas
+    description: comunas censo 2024
+    filename: GCOD-Comuna-Provincia-Region-Maestro.xlsx
+    tables:
+      - name: Cod_comuna
+        description: codigos de comunas
+        sheet_name: Cod_comuna
+        url: https://docs.google.com/spreadsheets/d/1yMrIEZp-8OkaRoUE2xHYnunKEFbCWjQR/edit?gid=1490598609#gid=1490598609
+        columns:
+          - name: cod_comuna
+            description: primary key
+  - name: colectas
+    description: a nivel de colecta, en que parroquia fue y monto. hay columans a la derehca que no son.
+    filename: Analisis_COLECTA_normalizada.xlsx
+    tables:
+      - name: analisis_COLECTA_unitaria
+        sheet_name: analisis_COLECTA_unitaria
+        url: https://docs.google.com/spreadsheets/d/1EYmYGHdELppqL1oCgDCgRomvJTX2KDBN/edit?gid=1936895282#gid=1936895282
+        description: Raw customers data
+        columns:
+          - name: id
+            description: primary key
+      - name: colectas_por_ano
+        sheet_name: colectas_por_ano
+        url: https://docs.google.com/spreadsheets/d/1EYmYGHdELppqL1oCgDCgRomvJTX2KDBN/edit?gid=1228087779#gid=1228087779
+  - name: data_comunas_2017
+    description: data de censo demografica, porcentaje de religiones
+    notas: no hay contenido, solo map_rm
+    filename: Data APXS 2017.xlsx
+    tables:
+      - name: Data APXS 2017
+        sheet_name: Data APXS 2017
+        url: https://docs.google.com/spreadsheets/d/1ls0R3RlhBHfQY23qMhJ4xdnvGE6xvrhw
+        columns:
+          - name: id
+            description: primary key
